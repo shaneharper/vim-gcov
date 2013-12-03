@@ -13,8 +13,8 @@ import executed_lines
 def highlight_executed_lines():
     import os
 
-    for sign_id, line_number in enumerate(executed_lines.executed_line_numbers(os.path.basename(vim.current.buffer.name))): # XXX can basename always be used? What happens if source file is in a sub-directory?
-        vim.command('exe ":sign place '+str(sign_id+1)+' line='+str(line_number)+' name=executed file=".expand("%:p")')
+    for sign_id, line_number in enumerate(executed_lines.executed_line_numbers_generator(os.path.basename(vim.current.buffer.name)), start=1): # XXX can basename always be used? What happens if source file is in a sub-directory?
+        vim.command('exe ":sign place '+str(sign_id)+' line='+str(line_number)+' name=executed file=".expand("%:p")')
 .
 
 
