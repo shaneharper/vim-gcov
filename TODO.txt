@@ -1,0 +1,3 @@
+Nice to automate following test cases:
+- fold added at end of file if last lines of file aren't executed.
+- fold at start of file if first lines aren't executed.
